@@ -1,16 +1,16 @@
 // Episode 1
-const scenario = {
-  murderer: 'Miss Scarlet',
-  room: 'Library',
-  weapon: 'Rope'
-};
-
-const declareMurderer = function() {
-  return `The murderer is ${scenario.murderer}.`;
-}
-
-const verdict = declareMurderer();
-console.log(verdict);
+// const scenario = {
+//   murderer: 'Miss Scarlet',
+//   room: 'Library',
+//   weapon: 'Rope'
+// };
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${scenario.murderer}.`;
+// }
+//
+// const verdict = declareMurderer();
+// console.log(verdict);
 // The murderer is Miss Scarlet.
 // the values in scenario are unchanged
 
@@ -199,3 +199,21 @@ console.log(verdict);
 // console.log(verdict);
 // The murderer is Professor Plum.
 // the new assignment of murderer does not get passed as a global variable
+
+// Extension
+murderer = 'Professor Plum';
+
+function suspect() {
+  let murderer = 'Mrs. Peacock';
+  return murderer;
+}
+
+const scenario = {
+  murderer: suspect(),
+  room: 'Kitchen',
+  weapon: 'Knife'
+}
+
+console.log('The murderer is: ' + scenario.murderer);
+// Mrs. Peacock
+// murderer is declared globally and then redeclared locally
